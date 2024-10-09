@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/kullaniciGirisFragment">
+
+    <fragment
+        android:id="@+id/kullaniciGirisFragment"
+        android:name="com.tolgadirek.t_media.view.KullaniciGirisFragment"
+        android:label="fragment_kullanici_giris"
+        tools:layout="@layout/fragment_kullanici_giris" >
+        <action
+            android:id="@+id/action_kullaniciGirisFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_kullaniciGirisFragment_to_kayitOlFragment"
+            app:destination="@id/kayitOlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bilgileriDuzenleFragment"
+        android:name="com.tolgadirek.t_media.view.BilgileriDuzenleFragment"
+        android:label="fragment_bilgileri_duzenle"
+        tools:layout="@layout/fragment_bilgileri_duzenle" >
+        <action
+            android:id="@+id/action_bilgileriDuzenleFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.tolgadirek.t_media.view.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_yuklemeFragment"
+            app:destination="@id/yuklemeFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_bilgileriDuzenleFragment"
+            app:destination="@id/bilgileriDuzenleFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_kullaniciGirisFragment"
+            app:destination="@id/kullaniciGirisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yuklemeFragment"
+        android:name="com.tolgadirek.t_media.view.YuklemeFragment"
+        android:label="fragment_yukleme"
+        tools:layout="@layout/fragment_yukleme" >
+        <action
+            android:id="@+id/action_yuklemeFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kayitOlFragment"
+        android:name="com.tolgadirek.t_media.view.KayitOlFragment"
+        android:label="fragment_kayit_ol"
+        tools:layout="@layout/fragment_kayit_ol" >
+        <action
+            android:id="@+id/action_kayitOlFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+</navigation>
